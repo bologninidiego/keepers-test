@@ -22,7 +22,7 @@ export class DealService
     ){
       this._activeDealBS.pipe(takeUntil(this._unsubscribeAll)).subscribe((deal: Deal) => {
         if (deal) {
-          if (deal.purchasePrice >= 0 && deal.netOperatingIncome >= 0) deal.capRate = Number(((deal.netOperatingIncome/deal.purchasePrice)*100))
+          deal.capRate = (deal.purchasePrice > 0 && deal.netOperatingIncome > 0)? Number(((deal.netOperatingIncome/deal.purchasePrice)*100))-100 : 0
           this._activeDeal.next(deal);
         }
       });

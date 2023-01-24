@@ -28,7 +28,7 @@ export const dealColumnDefs: ListColumnDef[] =
   {
     fieldKey: 'purchasePrice',
     title: 'Purchase price',
-    order: 2,
+    order: 3,
     width: 60,
     dataType: 'currency',
     mask: {
@@ -39,7 +39,7 @@ export const dealColumnDefs: ListColumnDef[] =
   {
     fieldKey: 'address',
     title: 'Address',
-    order: 3,
+    order: 2,
     width: 300,
   },
   {
