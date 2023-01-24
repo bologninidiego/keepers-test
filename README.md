@@ -24,3 +24,5 @@ The funcionalitys are:
 5. The cap rate is automatically calculated by changing the NOI/Purchase price.
 
 Hope you'll enjoy it. Cheers :metal:
+
+![image](https://user-images.githubusercontent.com/14941556/214393956-9647d458-2c70-4539-9cc5-a93f09a88c97.png)
