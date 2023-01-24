@@ -1,0 +1,116 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+:root {
+  --mdc-theme-primary: #FF6804;
+  --mdc-theme-secondary: #651A00;
+  --mdc-theme-on-primary: #fff;
+  --mdc-theme-on-secondary: #fff;
+}
+
+.mat-mdc-raised-button[disabled] {
+  opacity: 0.25;
+}
+
+* {
+  font-family: 'Segoe UI','Roboto','Oxygen-Sans','Ubuntu','Cantarell','Helvetica Neue','sans-serif';
+  font-size: 1rem;
+  color: #3E3A3A;
+}
+
+@mixin secondary-color {
+    color: #FF6804;
+}
+
+@mixin bg-secondary-color {
+  background-color: #FF6804 !important;
+}
+
+@mixin primary-text-color {
+    color: #3E3A3A;
+}
+
+.secondary-text-color {
+    color: #54595F;
+}
+
+@mixin bg-gray {
+  background-color: #e0e0e0 !important;
+}
+
+@mixin text-bold {
+  font-weight: bold;
+}
+
+@mixin text-extrabold {
+  font-weight: bolder;
+}
+
+.w-full {
+  width: 100% !important;
+}
+
+.h-full {
+  height: 100% !important;
+}
+
+.main-list-div {
+  margin: 0.5rem;
+}
+
+@mixin padding-datatable {
+  padding: 0.6rem !important;
+}
+
+.datatable-header-cell-label {
+  @include secondary-color;
+  @include text-bold;
+}
+
+.datatable-header-cell {
+  @include padding-datatable;
+}
+
+.datatable-body-cell {
+  @include padding-datatable;
+}
+
+.dialog-title {
+  @include secondary-color;
+}
+
+.modal-title {
+  @include secondary-color;
+  @include bg-gray;
+  padding: 6px !important;
+  margin-bottom: 12px !important;
+}
+
+.custom-buttom {
+  @include bg-secondary-color;
+  .mat-icon {
+    color: white !important;
+    height: 18px;
+  }
+  * {
+    color: white !important;
+    line-height: 18px;
+  }
+}
+
+.title-text {
+  @include primary-text-color;
+  @include text-extrabold;
+  font-size: xx-large;
+  line-height: 36px;
+}
+
+.ngx-datatable.material.striped .datatable-row-odd {
+  background: #ffddc6 !important;  
+}
+
+.list-title {
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+

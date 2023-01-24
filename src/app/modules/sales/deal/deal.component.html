@@ -1,0 +1,29 @@
+<div class="w-full h-full">
+  <div class="flex h-full">
+    <div fxLayout="row" class="flex flex-row list-title">
+      <div fxLayoutAlign="start center" class="title-text h-full truncate">
+        Deals
+      </div>
+      <div>
+        <button mat-raised-button
+          class="custom-buttom" 
+          (click)="newDeal()"
+        >
+          <span>New Deal</span>
+          <mat-icon>add</mat-icon>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <deal-list-component></deal-list-component>
+  </div>
+
+
+</div>
+
+
+
+

@@ -1,0 +1,61 @@
+<div class="dialog-content-wrapper">
+  <div matDialogTitle class="m-0 modal-title" fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="dialog-title title-text">{{form.get('id').value? 'Edit' : 'New'}} deal</span>
+      <button mat-mini-fab class="custom-buttom" (click)="dialogRef.close()" aria-label="Close dialog">
+          <mat-icon>close</mat-icon>
+      </button>
+  </div>
+
+  <div mat-dialog-content class="p-24 pb-0 m-0">
+    <form [formGroup]="form">
+      <div *ngFor="let ln of formLines; let i = index" fxLayout="row" fxLayoutAlign="start" fxLayoutGap="10px">
+        <div *ngFor="let fd of formLines[i]; let j = index" [fxFlex]="fd.width">
+          <mat-form-field fxFlex [floatLabel]="'auto'">
+            <mat-label>{{ fd.placeholder }}</mat-label>
+            <div *ngIf="fd.dataType === 'currency'">
+              <input matInput currencyMask
+                [readonly]="fd.disabled"
+                [formControlName]="fd.fieldKey"
+                [id]="fd.fieldKey"
+                (keyup)="onKeyUp()"
+              >
+            </div>
+            <div *ngIf="fd?.dataType !== 'currency'">
+              <input matInput [type]="fd.dataType" 
+                [mask]="fd.mask"
+                [suffix]="fd.suffix"
+                [thousandSeparator]="fd.thousandSeparator"
+                [readonly]="fd.disabled"
+                [formControlName]="fd.fieldKey"
+                [id]="fd.fieldKey"
+                (keyup)="onKeyUp()"
+              >
+            </div>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+    <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+      <button mat-raised-button
+        class="custom-buttom" 
+        (click)="saveOrUpdate()"
+        [disabled]="form.invalid || !form.dirty"
+      >
+        <span>Save</span>
+        <mat-icon>save</mat-icon>
+      </button>
+
+      <button mat-raised-button
+        class="custom-buttom" 
+        (click)="delete()"
+        [disabled]="!form.get('id').value"
+      >
+        <span>Delete</span>
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+
+    
+
+  </div>
+</div>
