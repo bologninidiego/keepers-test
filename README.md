@@ -14,6 +14,7 @@ So, to run up the project you'll need:
 1. clone it
 2. `npm install` (maybe a `--force` directive will be necessary)
 3. `ng serve`
+4. http://localhost:4200
 
 
 The funcionalitys are:
